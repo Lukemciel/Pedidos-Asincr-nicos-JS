@@ -1,8 +1,13 @@
 window.onload = () => {
   const app = document.getElementById("root");
   const container = document.createElement("div");
+  const create = document.querySelector("#createBtn")
   container.setAttribute("class", "container");
   app.appendChild(container);
+
+  create.addEventListener("click", (e) => {
+    window.location.href = "http://localhost:3031/formularioCreate"
+  })
 
   fetch("http://localhost:3031/api/movies")
     .then((response) => {

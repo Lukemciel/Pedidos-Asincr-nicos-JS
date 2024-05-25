@@ -13,31 +13,14 @@ window.onload = () => {
   const parts = path.split("/")
   const id = parts[2]
 
+  // Funcionalidad de create
 
-
-  fetch(`http://localhost:3031/api/movies/${id}`)
-    .then((response) => {
-      return response.json()
-    })
-    .then((peliculas) => {
-      const movie = peliculas.data
-      titleInput.value = movie.title
-      ratingInput.value = movie.rating
-      awardsInput.value = movie.awards
-      relDateInput.value = movie.release_date.split('T', 1)[0]
-      lengthInput.value = movie.length
-      genreInput.value = movie.genre.name
-    });
-
-  // Funcionalidad de editar 
-
-  const editBtn = document.querySelector("#editButton")
-  const deleteBtn = document.querySelector("#deleteButton")
+  const createBtn = document.querySelector("#createButton")
 
 
 
 
-  editBtn.addEventListener("click", (e) => {
+  createBtn.addEventListener("click", (e) => {
     e.preventDefault()
 
     const data = {
@@ -50,13 +33,13 @@ window.onload = () => {
     }
     console.log(JSON.stringify(data));
 
-    const url = `http://localhost:3031/api/movies/update/${id}`
+    const url = "http://localhost:3031/api/movies/create"
 
     fetch(url, {
       headers: {
         'Content-Type': 'application/json',
       },
-      method: "PUT",
+      method: "POST",
       body: JSON.stringify(data)
     })
       .then((response) => {
@@ -68,6 +51,6 @@ window.onload = () => {
       .catch((error) => {
         console.log(error);
       })
-      window.location.href = `http://localhost:3031/formulario/${id}`
+      window.location.href = `http://localhost:3031/home`
   })
 }

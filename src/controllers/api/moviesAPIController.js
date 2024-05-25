@@ -131,9 +131,10 @@ const moviesAPIController = {
                         meta: {
                             status: 200,
                             total: confirm.length,
-                            url: 'api/movies/:id'
+                            url: 'api/movies/:id',
+                            res: "success"
                         },
-                        data: confirm
+                        data: confirm,
                     }
                 } else {
                     respuesta = {

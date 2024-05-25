@@ -8,6 +8,9 @@ router.get("/home", (req, res) => {
 router.get("/formulario/:id", (req, res) => {
     res.render("formulario")
 })
+router.get("/formularioCreate", (req, res) => {
+    res.render("formcreate")
+})
 
 router.get("/favoritas", (req, res) => {
     res.render("favoritas")
