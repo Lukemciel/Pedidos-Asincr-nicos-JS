@@ -8,8 +8,9 @@ window.onload = () => {
 
 
 
-  /** Codigo que debemos usar para mostrar los datos en el frontend
-    let data = peliculas.data;
+    // let data = peliculas.data;
+    let data = [{
+    }]
 
     data.forEach((movie) => {
       const card = document.createElement("div");
@@ -34,5 +35,4 @@ window.onload = () => {
       }
       card.appendChild(duracion);
     });
-  */
 };

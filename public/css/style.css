@@ -48,6 +48,7 @@ p {
   border-radius: 12px;
   overflow: hidden;
   transition: all .2s linear;
+  position: relative;
 }
 
 .card:hover {
@@ -87,6 +88,24 @@ p {
 input, select{
   width: 60%;
   height: 25px;
+}
+
+.fa-regular {
+  color: gray;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  z-index: 10;
+}
+
+.fa-solid {
+  color: green;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  z-index: 10;
 }
 
 @media screen and (min-width: 600px) {
